@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Formulario</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="Creando mi primer formulario con HTML y CSS"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/las_propiedades.css')}}">
+	<link rel="icon" type="text/css" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png">
+</head>
+<body></br></br>
+	<div class="container alerta">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" role="alert">
+                    {{message}}
+                </div>
+
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+
+	<h1>Formulario</h1>
+    <form action="/formulario" target="" method="post" name="formDatosPersonales">
+	
+
+	<label for="nombre">Nombre</label>
+	<input type="text" class="field" name="nombre" id="nombre" placeholder="Escriba su nombre" required/></br>
+
+	<label for="apellidos">Apellidos</label>
+	<input type="text" class="fields" name="apellidos" id="apellidos" placeholder="Apellidos" required/></br>
+
+	<label for="email" />Email</label>
+	<input type="email" class="fields" name="email" id="email" placeholder="Dirección de correo" required /></br>
+
+	<label for="asunto">Asunto</label>
+	<input type ="text" class="field" name="asunto" id="asunto" placeholder="titular de la consulta"/></br></br>
+
+	<label for="mensaje">Mensaje</label>
+	<textarea name="mensaje" class="field" type="Mensaje" for="mensaje" placeholder=" Describe brevemente en menos de 300 carácteres :)" maxlength="300"></textarea></br>
+	<input type="submit" name="enviar" value="enviar datos"/>
+			<img src="https://media3.giphy.com/media/VgwAJGmko9I6cUWAKP/giphy.gif" alt="">	
+    </form>
+	
+	<footer>
+		<strong><font color = "white"><strong>Estudiante: Cristal Melissa Tavárez Novas</strong></font></strong>
+	</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
